@@ -59,7 +59,7 @@ jobs:
           haxelib install flixel-addons 3.2.3
           haxelib install tjson
           haxelib git SScript https://github.com/MobilePorting/SScript-Base
-          haxelib install hxvlc 1.6.2
+          haxelib install hxvlc 1.7.1
           haxelib install hxjsonast
           haxelib install hscript
           haxelib git flxanimate https://github.com/beihu235/flxanimate
@@ -76,7 +76,7 @@ jobs:
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
           haxelib set openfl 9.3.4
-          haxelib set hxvlc 1.6.2
+          haxelib set hxvlc 1.7.1
           haxelib set flixel 5.8.0
           haxelib set flixel-addons 3.2.3
       
