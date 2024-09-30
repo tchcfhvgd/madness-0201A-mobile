@@ -37,6 +37,7 @@ jobs:
           haxelib install openfl 9.3.4 --quiet
           haxelib install flixel 5.7.2 --quiet
           haxelib install flixel-addons 3.2.3 --quiet
+          haxelib install flixel-ui --quiet
           haxelib install flixel-tools 1.5.1 --quiet
           haxelib install tjson 1.4.0 --quiet
           haxelib git flxanimate https://github.com/beihu235/flxanimate
