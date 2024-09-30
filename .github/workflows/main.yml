@@ -58,7 +58,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install flixel-addons 3.2.1
           haxelib install tjson
-          haxelib install SScript 8.1.6
+          haxelib git SScript https://github.com/MobilePorting/SScript-Base
           haxelib install hxvlc
           haxelib install hxjsonast
           haxelib install hscript
