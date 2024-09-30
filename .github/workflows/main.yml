@@ -13,23 +13,31 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+permissions:
+  contents: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
 
+  get-commit-hash:
+    runs-on: ubuntu-latest
+    outputs:
+      commit_hash: ${{ steps.get_commit_hash.outputs.COMMIT_HASH }}
+    steps:
+      - name: Get latest commit hash
+        id: get_commit_hash
+        run: |
+          commit_hash=${GITHUB_SHA::7}
+          echo "Latest commit hash is $commit_hash"
+          echo "::set-output name=COMMIT_HASH::$commit_hash"
+  
   buildAndroid:
     name: buildAndroid
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
-      - name: Setup Java JDK
-        uses: actions/setup-java@main
-        with:
-          distribution: 'temurin'
-          java-version: '17'
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
