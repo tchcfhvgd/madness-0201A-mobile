@@ -80,6 +80,8 @@ class MusicBeatSubstate extends FlxSubState
 		{
 			super.destroy();
 
+			Controls.CheckPress = false;
+			
 			#if mobile
 			if (virtualPad != null)
 			virtualPad = FlxDestroyUtil.destroy(virtualPad);
