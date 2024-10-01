@@ -25,7 +25,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
-import Controls;
+import backend.Controls;
 import options.BaseOptionsMenu;
 import options.Option;
 import openfl.Lib;
@@ -67,6 +67,7 @@ final hintOptions:Array<String> = ["No Gradient", "No Gradient (Old)", "Gradient
 			'Choose how your hitbox should look like.',
 			'hitboxType',
 			'string',
+			 null,
 			hintOptions);
 			addOption(option);
 
