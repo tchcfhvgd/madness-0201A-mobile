@@ -94,6 +94,7 @@ class MusicBeatState extends FlxUIState
 			mobileControls.cameras = [camControls];
 			mobileControls.visible = false;
 			add(mobileControls);
+			Controls.CheckControl = true;
 		}
 
 		public function removeMobileControls()
