@@ -107,7 +107,7 @@ class Controls
 		controllerMode = false;
 		}				
 
-		return result || _myGamepadJustPressed(gamepadBinds[key]) == true #if ios || checkAndroidControl_justPressed(key) == true #end;
+		return result || _myGamepadJustPressed(gamepadBinds[key]) == true #if mobile || checkAndroidControl_justPressed(key) == true #end;
 	}
 
 	public function pressed(key:String)
@@ -122,7 +122,7 @@ class Controls
 		controllerMode = false;
 		}
 
-		return result || _myGamepadPressed(gamepadBinds[key]) == true #if ios || checkAndroidControl_pressed(key) == true #end;
+		return result || _myGamepadPressed(gamepadBinds[key]) == true #if mobile || checkAndroidControl_pressed(key) == true #end;
 	}
 
 	public function justReleased(key:String)
@@ -137,7 +137,7 @@ class Controls
 		controllerMode = false;
 		}
 
-		return result || _myGamepadJustReleased(gamepadBinds[key]) == true #if ios || checkAndroidControl_justReleased(key) == true #end;
+		return result || _myGamepadJustReleased(gamepadBinds[key]) == true #if mobile || checkAndroidControl_justReleased(key) == true #end;
 	}
 
 	public var controllerMode:Bool = false;
