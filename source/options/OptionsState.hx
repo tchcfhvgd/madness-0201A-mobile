@@ -20,12 +20,24 @@ class OptionsState extends MusicBeatState
 			// case 'Note Colors':
 			// 	openSubState(new options.NotesSubState());
 			case 'Controls':
+				#if android
+				removeVirtualPad();
+				#end
 				openSubState(new options.ControlsSubState());
 			case 'Graphics':
+				#if android
+				removeVirtualPad();
+				#end
 				openSubState(new options.GraphicsSettingsSubState());
 			case 'Visuals and UI':
+				#if android
+				removeVirtualPad();
+				#end
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
+				#if android
+				removeVirtualPad();
+				#end
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				MusicBeatState.switchState(new options.NoteOffsetState());
@@ -79,6 +91,10 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
+		#if mobile
+                addVirtualPad(UP_DOWN, A_B_X_Y);
+                #end
+		
 		super.create();
 	}
 
@@ -98,6 +114,10 @@ class OptionsState extends MusicBeatState
 
 		super.closeSubState();
 		ClientPrefs.saveSettings();
+		#if mobile
+		removeVirtualPad();
+                addVirtualPad(UP_DOWN, A_B_X_Y);
+                #end
 		#if DISCORD_ALLOWED
 		DiscordClient.changePresence("Options Menu", null);
 		#end
@@ -113,6 +133,18 @@ class OptionsState extends MusicBeatState
 			changeSelection(1);
 		}
 
+		#if mobile
+	 if (virtualPad.buttonX.justPressed)
+		{
+			removeVirtualPad();
+			openSubState(new mobile.MobileControlsSubState());
+		}
+		if (virtualPad.buttonY.justPressed) {
+			removeVirtualPad();
+			openSubState(new mobile.AndroidSettingsSubState());
+		}
+	#end
+		
 		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('madness/beep'));
 			if(onPlayState)
