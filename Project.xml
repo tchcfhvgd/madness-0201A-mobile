@@ -77,6 +77,7 @@
 		<!-- <assets path='example_mods' rename='mods' embed='false'/> -->
 		
 	</section>
+	<assets path="mobile" rename="assets/mobile" if="mobile"/>
 	<assets path='flxanimate' embed='false'/>
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 
