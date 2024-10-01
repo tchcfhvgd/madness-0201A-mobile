@@ -57,7 +57,14 @@ class MusicBeatSubstate extends FlxSubState
 			remove(virtualPad);
 		}
 
-		public function addVirtualPadCamera(DefaultDrawTarget:Bool = true)
+		#if mobile
+	        public function noCheckPress() 
+	        {
+		        Controls.CheckPress = false;
+	        }
+	        #end
+	
+	        public function addVirtualPadCamera(DefaultDrawTarget:Bool = true)
 		{
 			if (virtualPad != null)
 			{
