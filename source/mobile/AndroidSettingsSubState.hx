@@ -50,7 +50,7 @@ final hintOptions:Array<String> = ["No Gradient", "No Gradient (Old)", "Gradient
 		option.decimals = 2;
 		option.onChange = () ->
 		{
-			virtualPad.alpha = curOption.getValue();
+			MusicBeatSubstate.virtualPad.alpha = curOption.getValue();
 		};
 		addOption(option);
 
