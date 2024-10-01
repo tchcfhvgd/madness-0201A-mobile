@@ -73,7 +73,7 @@ class MadnessMenu extends MusicBeatState
         var pos = [];
         for (i in opt[2].split(',')) pos.push(Std.parseFloat(i));
         
-        var char = new FlxAnimate(pos[0],pos[1],Sys.getCwd() + 'assets/shared/images/madnessmenu/${opt[0]}');
+        var char = new FlxAnimate(pos[0],pos[1],'assets/shared/images/madnessmenu/${opt[0]}');
         char.antialiasing = true;
         char.showPivot = false;
         char.anim.addBySymbol('i',opt[1],24,true);
@@ -205,7 +205,7 @@ class MadnessMenu extends MusicBeatState
 
         if (trophyKey == 'Trophy2')
         {
-            var anim = new FlxAnimate(300,90,Sys.getCwd() + 'assets/shared/images/madnessmenu/gruny');
+            var anim = new FlxAnimate(300,90,'assets/shared/images/madnessmenu/gruny');
             anim.anim.addBySymbol('i','idle move',24);
             anim.anim.play('i');
             add(anim);
