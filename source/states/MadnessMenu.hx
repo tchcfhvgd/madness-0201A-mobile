@@ -43,7 +43,7 @@ class MadnessMenu extends MusicBeatState
         
 
         Paths.sound("coming soon");
-        FlxG.mouse.visible = true;
+        FlxG.mouse.visible = false;
         FlxG.mouse.load(mouseGraphic,0.5);
 
         FlxG.camera.antialiasing = ClientPrefs.data.antialiasing;
