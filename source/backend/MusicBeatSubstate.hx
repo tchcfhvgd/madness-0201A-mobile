@@ -34,7 +34,7 @@ class MusicBeatSubstate extends FlxSubState
 		return Controls.instance;
 
 	#if mobile
-		var virtualPad:FlxVirtualPad;
+		public static var virtualPad:FlxVirtualPad;
 		//var trackedInputsVirtualPad:Array<FlxActionInput> = [];
 
 		public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode)
