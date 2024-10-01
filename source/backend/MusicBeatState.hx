@@ -132,6 +132,8 @@ class MusicBeatState extends FlxUIState
 
 			if (mobileControls != null)
 			mobileControls = FlxDestroyUtil.destroy(mobileControls);
+
+			Controls.CheckPress = false;
 			#end
 		}
 	
