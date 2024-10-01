@@ -85,9 +85,6 @@ class OptionsState extends MusicBeatState
 			
 		}
 
-
-
-
 		changeSelection();
 		ClientPrefs.saveSettings();
 
@@ -134,12 +131,12 @@ class OptionsState extends MusicBeatState
 		}
 
 		#if mobile
-	 if (virtualPad.buttonX.justPressed)
+	 if (MusicBeatState.virtualPad.buttonX.justPressed)
 		{
 			removeVirtualPad();
 			openSubState(new mobile.MobileControlsSubState());
 		}
-		if (virtualPad.buttonY.justPressed) {
+		if (MusicBeatState.virtualPad.buttonY.justPressed) {
 			removeVirtualPad();
 			openSubState(new mobile.AndroidSettingsSubState());
 		}
