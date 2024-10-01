@@ -9,11 +9,6 @@ class NGIntro extends FlxState
     var snd:FlxSound;
     override function create() 
     {
-        #if mobile
-	    noCheckPress();
-        removeVirtualPad();
-	    #end
-        
         FlxG.mouse.visible = false;
         Main.fpsVar.visible = false; 
         FlxG.camera.bgColor = FlxColor.BLACK;
