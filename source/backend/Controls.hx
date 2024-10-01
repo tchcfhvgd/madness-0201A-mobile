@@ -264,19 +264,19 @@ class Controls
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
     		    if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[2].justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[1].justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[0].justPressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justPressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[3].justPressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
     		}//MusicBeatState.checkHitbox
@@ -393,19 +393,19 @@ class Controls
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
     		    if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[2].pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[1].pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[0].pressed == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.pressed == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[3].pressed == true);
         		if(result) {controllerMode = true; return true;}
     		    }
     		}//MusicBeatState.checkHitbox
@@ -522,19 +522,19 @@ class Controls
 		if (CheckControl){
     		if (MusicBeatState.checkHitbox){
     		    if (key == 'note_up'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonUp.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[2].justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_down'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonDown.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[1].justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_left'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonLeft.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[0].justReleased == true);
         		if(result) {controllerMode = true; return true;}
         		}
         		if (key == 'note_right'){
-        		result = (MusicBeatState.mobileControls.hitbox.buttonRight.justReleased == true);
+        		result = (MusicBeatState.mobileControls.hitbox.hints[3].justReleased == true);
         		if(result) {controllerMode = true; return true;}
     		    }
     		}//MusicBeatState.checkHitbox
