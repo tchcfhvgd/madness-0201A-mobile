@@ -40,10 +40,10 @@ class FlxHitbox extends FlxSpriteGroup
 			colors = [0xFFFFFF, 0xFFFFFF, 0xFFFFFF, 0xFFFFFF];
 
 		for (i in 0...ammo)
-			add(hints[i] = createHint(i * perHintWidth, (ClientPrefs.mobileCEx) ? offsetSec : 0, perHintWidth,
-				(ClientPrefs.mobileCEx) ? Std.int(FlxG.height / ammo) * 3 : perHintHeight, colors[i]));
+			add(hints[i] = createHint(i * perHintWidth, (ClientPrefs.data.mobileCEx) ? offsetSec : 0, perHintWidth,
+				(ClientPrefs.data.mobileCEx) ? Std.int(FlxG.height / ammo) * 3 : perHintHeight, colors[i]));
 
-		if (ClientPrefs.mobileCEx)
+		if (ClientPrefs.data.mobileCEx)
 			add(hints[4] = createHint(0, offsetFir, FlxG.width, Std.int(FlxG.height / 4), 0xFF0066FF));
 
 		scrollFactor.set();
@@ -65,7 +65,7 @@ class FlxHitbox extends FlxSpriteGroup
 	private function createHint(X:Float, Y:Float, Width:Int, Height:Int, Color:Int = 0xFFFFFF):FlxButton
 	{
 		final guh2:Float = 0.00001;
-		final guh:Float = ClientPrefs.hitboxalpha >= 0.9 ? ClientPrefs.hitboxalpha - 0.2 : ClientPrefs.hitboxalpha;
+		final guh:Float = ClientPrefs.data.hitboxalpha >= 0.9 ? ClientPrefs.data.hitboxalpha - 0.2 : ClientPrefs.data.hitboxalpha;
 		var hint:FlxButton = new FlxButton(X, Y);
 		hint.loadGraphic(createHintGraphic(Width, Height, Color));
 		hint.solid = false;
