@@ -90,9 +90,9 @@ class Controls
 	private function get_PAUSE() return justPressed('pause');
 	private function get_RESET() return justPressed('reset');
 	
-	public static var checkState:Bool = true;
-	public static var CheckPress:Bool = true;
-    public static var CheckControl:Bool = true;
+	public static var checkState:Bool = false;
+	public static var CheckPress:Bool = false;
+    public static var CheckControl:Bool = false;
     public static var CheckKeyboard:Bool = false;
 	//Gamepad & Keyboard stuff
 	public var keyboardBinds:Map<String, Array<FlxKey>>;
