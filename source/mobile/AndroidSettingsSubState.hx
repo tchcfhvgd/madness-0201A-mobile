@@ -48,6 +48,10 @@ final hintOptions:Array<String> = ["No Gradient", "No Gradient (Old)", "Gradient
 		option.maxValue = 1;
 		option.changeValue = 0.01;
 		option.decimals = 2;
+		option.onChange = () ->
+		{
+			virtualPad.alpha = curOption.getValue();
+		};
 		addOption(option);
 
 		var option:Option = new Option('Hitbox Opacity', // mariomaster is dead :00000
@@ -63,7 +67,6 @@ final hintOptions:Array<String> = ["No Gradient", "No Gradient (Old)", "Gradient
 			'Choose how your hitbox should look like.',
 			'hitboxType',
 			'string',
-			null,
 			hintOptions);
 			addOption(option);
 
