@@ -19,7 +19,12 @@ class Init extends FlxState
 		FlxG.game.focusLostFramerate = 60;
 		FlxG.keys.preventDefaultKeys = [TAB];
 
-		FlxG.save.bind('funkin', CoolUtil.getSavePath());
+		#if mobile
+	        removeVirtualPad();
+		noCheckPress();
+	        #end
+	    
+	        FlxG.save.bind('funkin', CoolUtil.getSavePath());
 
 		ClientPrefs.loadPrefs();
 
