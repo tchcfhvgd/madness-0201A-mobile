@@ -72,7 +72,7 @@ class FlxHitbox extends FlxSpriteGroup
 		hint.multiTouch = true;
 		hint.immovable = true;
 		hint.moves = false;
-		hint.antialiasing = ClientPrefs.data.globalAntialiasing;
+		//hint.antialiasing = ClientPrefs.data.globalAntialiasing;
 		hint.scrollFactor.set();
 		hint.alpha = guh2;
 		if (ClientPrefs.data.hitboxType != "Hidden")
