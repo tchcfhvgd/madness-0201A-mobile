@@ -340,7 +340,6 @@ class Controls
 
 	public function new()
 	{
-		mobileBinds = ClientPrefs.mobileBinds;
 		gamepadBinds = ClientPrefs.gamepadBinds;
 		keyboardBinds = ClientPrefs.keyBinds;
 	}
