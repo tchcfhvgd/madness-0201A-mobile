@@ -53,10 +53,10 @@ jobs:
           haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp.git
           haxelib git lime https://github.com/mcagabe19-stuff/lime
           haxelib install openfl 9.3.4
-          haxelib install flixel 5.7.0
+          haxelib install flixel
           haxelib install flixel-tools
           haxelib install flixel-ui
-          haxelib install flixel-addons 3.2.3
+          haxelib install flixel-addons
           haxelib install tjson
           haxelib install hxvlc 1.7.1
           haxelib install hxjsonast
@@ -78,8 +78,6 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set openfl 9.3.4
           haxelib set hxvlc 1.7.1
-          haxelib set flixel 5.7.0
-          haxelib set flixel-addons 3.2.3
       
       - name: Compile
         run: haxelib run lime build android
