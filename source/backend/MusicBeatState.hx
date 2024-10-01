@@ -56,7 +56,14 @@ class MusicBeatState extends FlxUIState
 			remove(virtualPad);
 		}
 
-		public function addMobileControls(DefaultDrawTarget:Bool = true)
+		#if mobile
+	        public function noCheckPress() 
+	        {
+		        Controls.CheckPress = false;
+	        }
+	        #end
+	
+	        public function addMobileControls(DefaultDrawTarget:Bool = true)
 		{
 			if (mobileControls != null)
 			removeMobileControls();
