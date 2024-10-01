@@ -20,11 +20,59 @@ class MusicBeatSubstate extends FlxSubState
 
 	private var curDecStep:Float = 0;
 	private var curDecBeat:Float = 0;
+	public static var checkHitbox:Bool = false;
+	public static var checkDUO:Bool = false;
 	private var controls(get, never):Controls;
 
 	inline function get_controls():Controls
 		return Controls.instance;
 
+	#if mobile
+		var virtualPad:FlxVirtualPad;
+		//var trackedInputsVirtualPad:Array<FlxActionInput> = [];
+
+		public function addVirtualPad(DPad:FlxDPadMode, Action:FlxActionMode)
+		{
+			if (virtualPad != null)
+			removeVirtualPad();
+
+			virtualPad = new FlxVirtualPad(DPad, Action);
+			add(virtualPad);
+                        Controls.checkState = false;
+		        Controls.CheckPress = true;
+			//controls.setVirtualPadUI(virtualPad, DPad, Action);
+			//trackedInputsVirtualPad = controls.trackedInputsUI;
+			//controls.trackedInputsUI = [];
+		}
+
+		public function removeVirtualPad()
+		{
+			if (virtualPad != null)
+			remove(virtualPad);
+		}
+
+		public function addVirtualPadCamera(DefaultDrawTarget:Bool = true)
+		{
+			if (virtualPad != null)
+			{
+				var camControls:FlxCamera = new FlxCamera();
+				FlxG.cameras.add(camControls, DefaultDrawTarget);
+				camControls.bgColor.alpha = 0;
+				virtualPad.cameras = [camControls];
+			}
+		}
+		#end
+
+		override function destroy()
+		{
+			super.destroy();
+
+			#if mobile
+			if (virtualPad != null)
+			virtualPad = FlxDestroyUtil.destroy(virtualPad);
+			#end
+		}
+	
 	override function update(elapsed:Float)
 	{
 		//everyStep();
