@@ -17,8 +17,8 @@ import openfl.geom.Matrix;
  */
 class FlxHitbox extends FlxSpriteGroup
 {
-	final offsetFir:Int = (ClientPrefs.hitboxPos ? Std.int(FlxG.height / 4) * 3 : 0);
-	final offsetSec:Int = (ClientPrefs.hitboxPos ? 0 : Std.int(FlxG.height / 4));
+	final offsetFir:Int = (ClientPrefs.data.hitboxPos ? Std.int(FlxG.height / 4) * 3 : 0);
+	final offsetSec:Int = (ClientPrefs.data.hitboxPos ? 0 : Std.int(FlxG.height / 4));
 
 	public var hints(default, null):Array<FlxButton>;
 
@@ -72,10 +72,10 @@ class FlxHitbox extends FlxSpriteGroup
 		hint.multiTouch = true;
 		hint.immovable = true;
 		hint.moves = false;
-		hint.antialiasing = ClientPrefs.globalAntialiasing;
+		hint.antialiasing = ClientPrefs.data.globalAntialiasing;
 		hint.scrollFactor.set();
 		hint.alpha = guh2;
-		if (ClientPrefs.hitboxType != "Hidden")
+		if (ClientPrefs.data.hitboxType != "Hidden")
 		{
 			hint.onDown.callback = function()
 			{
@@ -101,12 +101,12 @@ class FlxHitbox extends FlxSpriteGroup
 
 	private function createHintGraphic(Width:Int, Height:Int, Color:Int = 0xFFFFFF):BitmapData
 	{
-		var guh:Float = ClientPrefs.hitboxalpha;
+		var guh:Float = ClientPrefs.data.hitboxalpha;
 		if (guh >= 0.9)
-			guh = ClientPrefs.ClientPrefs.hitboxalpha - 0.07;
+			guh = ClientPrefs.data.hitboxalpha - 0.07;
 		var shape:Shape = new Shape();
 		shape.graphics.beginFill(Color);
-		if (ClientPrefs.hitboxType == "No Gradient")
+		if (ClientPrefs.data.hitboxType == "No Gradient")
 		{
 			var matrix:Matrix = new Matrix();
 			matrix.createGradientBox(Width, Height, 0, 0, 0);
@@ -115,7 +115,7 @@ class FlxHitbox extends FlxSpriteGroup
 			shape.graphics.drawRect(0, 0, Width, Height);
 			shape.graphics.endFill();
 		}
-		else if (ClientPrefs.hitboxType == "No Gradient (Old)")
+		else if (ClientPrefs.data.hitboxType == "No Gradient (Old)")
 		{
 			shape.graphics.lineStyle(10, Color, 1);
 			shape.graphics.drawRect(0, 0, Width, Height);
