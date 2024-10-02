@@ -622,7 +622,7 @@ class PlayState extends MusicBeatState
 
 		#if mobile
                 addMobileControls(false);
-                mobileControls.visible = false;
+                MusicBeatState.mobileControls.visible = false;
                 #end
 
 		startingSong = true;
@@ -1002,7 +1002,7 @@ class PlayState extends MusicBeatState
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 
 			#if mobile
-		        mobileControls.visible = true;
+		        MusicBeatState.mobileControls.visible = true;
 		        #end
 				
 			generateStaticArrows(0);
@@ -2513,7 +2513,7 @@ class PlayState extends MusicBeatState
 		seenCutscene = false;
 
 		#if mobile
-		mobileControls.visible = false;
+		MusicBeatState.mobileControls.visible = false;
 		#end
 
 		#if ACHIEVEMENTS_ALLOWED
