@@ -1,7 +1,6 @@
 package mobile.states;
 
 #if mobile
-import states.InitState;
 import flixel.FlxG;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -81,7 +80,7 @@ class CopyState extends MusicBeatState
 		}
 		else
 		{
-			MusicBeatState.switchState(new InitState());
+			MusicBeatState.switchState(new Init());
 		}
 
 		super.create();
@@ -102,7 +101,7 @@ class CopyState extends MusicBeatState
 				}
 				canUpdate = false;
 				FlxG.sound.play(Paths.sound('confirmMenu')).onComplete = () -> {
-					MusicBeatState.switchState(new InitState());
+					MusicBeatState.switchState(new Init());
 				};
 			}
 			if (maxLoopTimes == 0)
