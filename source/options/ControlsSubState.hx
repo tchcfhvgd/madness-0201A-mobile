@@ -308,7 +308,7 @@ class ControlsSubState extends MusicBeatSubstate
 					bindingText.alignment = CENTERED;
 					add(bindingText);
 					
-					bindingText2 = new Alphabet(FlxG.width / 2, 340, "Hold ESC to Cancel\nHold Backspace to Delete", true);
+					bindingText2 = new Alphabet(FlxG.width / 2, 340, "Hold B to Cancel\nHold C to Delete", true);
 					bindingText2.alignment = CENTERED;
 					add(bindingText2);
 
