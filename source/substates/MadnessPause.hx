@@ -25,9 +25,7 @@ class MadnessPause extends MusicBeatSubstate
 
 	override function create()
 	{
-
-
-		var pauseString = FlxG.random.bool(5) ? "pauseOld" : "pauseNew";
+	var pauseString = FlxG.random.bool(5) ? "pauseOld" : "pauseNew";
         pauseMusic = new FlxSound().loadEmbedded(Paths.music(pauseString),true);
         pauseMusic.play();
         pauseMusic.volume = 0;
@@ -154,10 +152,12 @@ class MadnessPause extends MusicBeatSubstate
         
         // creditText.x = -creditText.width;
         // FlxTween.tween(creditText, {x: prevCreditX},0.3,{startDelay: 0.2,ease: FlxEase.circOut});
-
-
-
-
+		
+		#if mobile
+                addVirtualPad(UP_DOWN, A);
+                addVirtualPadCamera(false);
+                #end
+			
 		super.create();
 
 		changeSel();
