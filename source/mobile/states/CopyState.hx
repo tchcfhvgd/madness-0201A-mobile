@@ -41,7 +41,6 @@ class CopyState extends MusicBeatState
 
 	override function create()
 	{
-		Main.fpsVar.visible = false;
 		locatedFiles = [];
 		maxLoopTimes = 0;
 		checkExistingFiles();
