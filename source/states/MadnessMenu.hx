@@ -82,22 +82,18 @@ class MadnessMenu extends MusicBeatState
         char.updateHitbox();
         add(char);
 
-        
         storyDropDown = new StorySubMenu();
         add(storyDropDown);
 
         baseButtons = new FlxTypedGroup<FlxSprite>();
         add(baseButtons);
 
-       
-
         storyButton = makeButton('storymode');
         storyButton.setPosition(1169 * uniScale,405 * uniScale);
         baseButtons.add(storyButton);
 
         storyDropDown.setPosition(storyButton.x + 40,storyButton.y - 320);
-       
-
+    
         var freeplayButton = makeButton('freeplay');
         freeplayButton.setPosition(storyButton.x + storyButton.width + 10,storyButton.y);
         baseButtons.add(freeplayButton);
@@ -116,7 +112,6 @@ class MadnessMenu extends MusicBeatState
         bottomBar.setScale(uniScale);
         bottomBar.y = FlxG.height - bottomBar.height + 100;
         add(bottomBar);
-
 
         circles = new FlxSpriteGroup();
         add(circles);
@@ -144,15 +139,12 @@ class MadnessMenu extends MusicBeatState
         logo.screenCenter(X);
         add(logo);
 
-
         //water mark shit from here
-
 
         var version = new FlxSprite(0,20,Paths.image('madnessmenu/version2'));
         version.setScale(uniScale);
         version.x = FlxG.width - version.width - 20;
         add(version);
-
 
         var ngPresents = new FlxSprite();
         ngPresents.frames = Paths.getSparrowAtlas('madnessmenu/ng');
@@ -189,9 +181,6 @@ class MadnessMenu extends MusicBeatState
             CoolUtil.browserLoad('https://x.com/vamazotz');
         },null,(o)->byDevsR.animation.play('vam'),(o)->byDevsR.animation.play('i'),false,true,false);
 
-
-        
-
         Difficulty.resetList();
         var trophyKey = Highscore.getRating('expurgation',1) == 1.0 ? 'Trophy2' : 'trophy';
 
@@ -216,7 +205,6 @@ class MadnessMenu extends MusicBeatState
         super.create();
 
         changeSel();
-
 
         //circle spawn stuff
         new FlxTimer().start(5,function(timer)
@@ -296,7 +284,7 @@ class MadnessMenu extends MusicBeatState
         }
 
 
-        if ((controls.BACK || FlxG.mouse.justPressedRight) && storyDropDown.open)
+        if ((controls.BACK #if android || FlxG.android.justReleased.BACK #end || FlxG.mouse.justPressedRight) && storyDropDown.open)
         {
             closeStoryDropdown();
 
