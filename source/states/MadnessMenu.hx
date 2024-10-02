@@ -40,7 +40,7 @@ class MadnessMenu extends MusicBeatState
 
 
     override function create() {
-        
+        noCheckPress();
 
         Paths.sound("coming soon");
         FlxG.mouse.visible = false;
