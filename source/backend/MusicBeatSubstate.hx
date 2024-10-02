@@ -79,8 +79,6 @@ class MusicBeatSubstate extends FlxSubState
 		override function destroy()
 		{
 			super.destroy();
-
-			Controls.CheckPress = false;
 			
 			#if mobile
 			if (virtualPad != null)
